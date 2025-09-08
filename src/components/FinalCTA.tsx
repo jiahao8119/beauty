@@ -104,6 +104,12 @@ const FinalCTA = () => {
           </div>
         </div>
       </div>
+      {/* Bottom Nav */}
+      <footer className="w-full bg-primary-700 text-white py-4 text-center text-sm opacity-90 fixed left-0 bottom-0 z-50">
+        <div>
+          © {new Date().getFullYear()} anggunskin.com. All rights reserved. Developed by <a href="https://blinkcodedev.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gold">BlinkCodeDev.com</a>.
+        </div>
+      </footer>
     </section>
   );
 };

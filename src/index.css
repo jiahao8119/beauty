@@ -1,3 +1,10 @@
+/* Aesthetic gradient border for media logo container */
+.media-logo-border {
+	border-radius: 2rem;
+	border-width: 2px;
+	border-style: solid;
+	border-image: linear-gradient(90deg, #f6d365 0%, #fda085 50%, #f6d365 100%) 1;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,4 +32,13 @@
 	0% { left: -75%; }
 	60% { left: 110%; }
 	100% { left: 110%; }
+}
+
+/* Auto-sliding media logos carousel */
+.animate-slide-logos {
+	animation: slide-logos 18s linear infinite;
+}
+@keyframes slide-logos {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
 }

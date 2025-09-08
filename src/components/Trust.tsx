@@ -8,7 +8,7 @@ const Trust = () => {
     { name: "Allure", logo: "ALLURE" },
     { name: "Harper's Bazaar", logo: "BAZAAR" },
     { name: "Cosmopolitan", logo: "COSMO" },
-    { name: "Marie Claire", logo: "MARIE CLAIRE" }
+    { name: "Marie Claire", logo: "SKII" }
   ];
 
   const certifications = [
@@ -28,22 +28,28 @@ const Trust = () => {
           </p>
         </div>
 
-        {/* Media Features */}
-        <div className="mb-16">
+        {/* Media Features - Auto Sliding Carousel */}
+        <div className="mb-16 ">
           <h3 className="text-2xl font-semibold text-center text-gray-900 mb-8">As Featured In</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {mediaLogos.map((media, index) => (
-              <div 
-                key={index}
-                className="text-center group hover:scale-110 transition-transform duration-200"
-              >
-                <div className="bg-white rounded-2xl p-6 shadow-lg group-hover:shadow-xl transition-shadow duration-200">
-                  <div className="text-2xl font-bold text-gray-800 group-hover:text-primary-600 transition-colors duration-200">
-                    {media.logo}
+          <div className="overflow-hidden w-full p-6">
+            <div
+              className="flex items-center gap-8 animate-slide-logos text-md font-semibold text-gray-800"
+              style={{ width: 'max-content' }}
+            >
+              {[...mediaLogos, ...mediaLogos].map((media, index) => (
+                <div
+                  key={index}
+                  className="text-center min-w-[140px] group"
+                  style={{ flex: '0 0 140px' }}
+                >
+                  <div className="bg-white rounded-2xl p-6 shadow-lg group-hover:shadow-xl transition-shadow duration-200 border-4 border-transparent bg-clip-padding media-logo-border">
+                    <div className="text-2xl font-bold text-gray-800 group-hover:text-primary-600 transition-colors duration-200">
+                      {media.logo}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
