@@ -38,11 +38,27 @@ const Benefits = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-beige-50 to-primary-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Glow Serum?</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Carefully crafted with the finest ingredients and backed by science to give you the radiant skin you deserve
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 bg-gold/10 text-gold font-semibold px-4 py-2 rounded-full text-sm mb-4 mx-auto">
+            <Sparkles className="w-4 h-4" /> Trusted by 2,800+ Happy Customers
+          </div>
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Reveal Your Most Radiant Skin—Guaranteed</h2>
+          <p className="text-xl text-primary-700 max-w-2xl mx-auto font-medium">
+            Join thousands who have transformed their skin with Glow Serum. Clinically proven, dermatologist recommended, and loved by real people like you.
           </p>
+        </div>
+
+        {/* Testimonial */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <div className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center">
+            <div className="flex items-center mb-2">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="text-gold text-xl">★</span>
+              ))}
+            </div>
+            <p className="text-gray-700 italic text-lg text-center">“I saw visible results in just a week! My skin is glowing and feels so much healthier. Highly recommend to anyone!”</p>
+            <div className="mt-2 text-sm text-gray-500">— Aina, Verified Customer</div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -65,9 +81,17 @@ const Benefits = () => {
         </div>
 
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-10 py-4 rounded-full font-semibold text-lg hover:from-primary-700 hover:to-primary-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
-            Shop Now - Experience the Difference
-          </button>
+          <a
+            href="https://wa.me/601133094116?text=Hi%2C%20I%20want%20to%20order%20the%20Glow%20Serum%20now!%20Is%20the%20special%20offer%20still%20available%3F"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-10 py-4 rounded-full font-extrabold text-lg hover:from-primary-700 hover:to-primary-600 transform hover:scale-105 transition-all duration-200 shadow-lg animate-pulse-gold inline-block"
+          >
+            Claim My Glow Now — Limited Time!
+          </a>
+          <div className="mt-3 text-sm text-gray-500">
+            100% Money-Back Guarantee. No risk, all reward.
+          </div>
         </div>
       </div>
     </section>

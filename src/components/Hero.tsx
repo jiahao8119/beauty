@@ -57,9 +57,14 @@ const Hero = () => {
               <span className="text-gray-700 font-medium">4.9/5 (2,847 reviews)</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-primary-700 hover:to-primary-600 transform hover:scale-105 transition-all duration-200 shadow-lg animate-pulse-gold">
+              <a
+                href="https://wa.me/601133094116?text=Hi%2C%20I%20am%20interested%20in%20the%20Glow%20Serum!%20Please%20tell%20me%20more."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-primary-700 hover:to-primary-600 transform hover:scale-105 transition-all duration-200 shadow-lg animate-pulse-gold flex items-center justify-center"
+              >
                 Whatsapp us Now
-              </button>
+              </a>
               {/* <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold text-lg hover:border-primary-500 hover:text-primary-600 transform hover:scale-105 transition-all duration-200">
                 Learn More
               </button> */}

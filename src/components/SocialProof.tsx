@@ -35,8 +35,8 @@ const SocialProof = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
               <Users className="w-8 h-8 text-primary-600" />
             </div>
-            <div className="text-3xl font-bold text-gray-900 mb-2">50K+</div>
-            <div className="text-gray-600">Happy Customers</div>
+            <div className="text-3xl font-bold text-gray-900 mb-2">20K+</div>
+            <div className="text-gray-600">Happy & Satisfied Customers</div>
           </div>
           <div className="text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gold/10 rounded-full mb-4">
@@ -50,7 +50,7 @@ const SocialProof = () => {
               <Heart className="w-8 h-8 text-red-500" />
             </div>
             <div className="text-3xl font-bold text-gray-900 mb-2">98%</div>
-            <div className="text-gray-600">Would Recommend</div>
+            <div className="text-gray-600">Would Recommend to Others</div>
           </div>
         </div>
 
