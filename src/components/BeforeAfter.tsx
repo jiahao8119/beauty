@@ -37,9 +37,9 @@ const BeforeAfter = () => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Real Results from Real Women</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Real Results from Our Customers</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            See the incredible transformations our customers have achieved with just a few weeks of consistent use
+            See the incredible transformations our customers have achieved with just a few weeks of consistent use of our serum.
           </p>
         </div>
 
