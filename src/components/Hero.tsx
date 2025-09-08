@@ -1,13 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
-import { Star, Sparkles } from 'lucide-react';
-
+import { useEffect, useRef, useState } from "react";
+import { Star, Sparkles } from "lucide-react";
 
 // Countdown target: 10 minutes from now
 const COUNTDOWN_TARGET = new Date(Date.now() + 1000 * 60 * 10);
 
 const Hero = () => {
   // Countdown timer logic
-  const [timeLeft, setTimeLeft] = useState(COUNTDOWN_TARGET.getTime() - Date.now());
+  const [timeLeft, setTimeLeft] = useState(
+    COUNTDOWN_TARGET.getTime() - Date.now()
+  );
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
@@ -19,15 +20,21 @@ const Hero = () => {
     };
   }, []);
 
-  const minutes = String(Math.floor(timeLeft / 60000)).padStart(2, '0');
-  const seconds = String(Math.floor((timeLeft % 60000) / 1000)).padStart(2, '0');
+  const minutes = String(Math.floor(timeLeft / 60000)).padStart(2, "0");
+  const seconds = String(Math.floor((timeLeft % 60000) / 1000)).padStart(
+    2,
+    "0"
+  );
 
   return (
     <section className="relative bg-gradient-to-br from-primary-50 via-white to-beige-50 min-h-screen flex items-center">
       {/* Countdown Timer */}
-      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20">
-        <div className="bg-white/90 border border-gold text-gold font-bold px-6 py-2 rounded-full shadow-lg flex items-center gap-2 text-lg animate-pulse-gold">
-          ⏰ Limited Offer Ends In: <span className="ml-2 font-mono">{minutes}:{seconds}</span>
+      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20">
+        <div className="bg-white/95 border-2 border-gold text-gold font-extrabold px-10 py-4 rounded-full shadow-2xl flex items-center gap-3 text-2xl animate-pulse-gold">
+          ⏰ Limited Offer Ends In:
+          <span className="ml-3 font-mono">
+            {minutes}:{seconds}
+          </span>
         </div>
       </div>
       <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-5"></div>
@@ -42,11 +49,12 @@ const Hero = () => {
             <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               <span className="bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent">
                 Glow
-              </span>{' '}
+              </span>{" "}
               Starts Here
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-lg">
-              Transform your skin with our clinically proven serum. See visible results in just 7 days with our revolutionary formula.
+              Transform your skin with our clinically proven serum. See visible
+              results in just 7 days with our revolutionary formula.
             </p>
             <div className="flex items-center gap-4 mb-8 justify-center lg:justify-start">
               <div className="flex items-center">
@@ -54,7 +62,9 @@ const Hero = () => {
                   <Star key={i} className="w-5 h-5 fill-gold text-gold" />
                 ))}
               </div>
-              <span className="text-gray-700 font-medium">4.9/5 (2,847 reviews)</span>
+              <span className="text-gray-700 font-medium">
+                4.9/5 (2,847 reviews)
+              </span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
@@ -73,7 +83,7 @@ const Hero = () => {
           {/* Right Content - Product Image */}
           <div className="relative animate-scale-in">
             <div className="relative shine-img-wrapper">
-              <img 
+              <img
                 src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Premium Glow Serum"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-2xl shine-img"
@@ -82,7 +92,9 @@ const Hero = () => {
                 NEW!
               </div>
               <div className="absolute bottom-0 -left-6 bg-white px-6 py-3 rounded-2xl">
-                <div className="text-2xl font-bold text-primary-600">7 Days</div>
+                <div className="text-2xl font-bold text-primary-600">
+                  7 Days
+                </div>
                 <div className="text-sm text-gray-600">Visible Results</div>
               </div>
             </div>
