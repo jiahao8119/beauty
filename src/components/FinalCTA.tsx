@@ -1,9 +1,17 @@
 import React, { useState } from "react";
-import { Download, Mail, Sparkles, Gift } from "lucide-react";
+import { Download, Mail, Sparkles, Gift, ClipboardList } from "lucide-react";
 
 const FinalCTA = () => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    age: "",
+    condition: "",
+    concerns: "",
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,6 +20,17 @@ const FinalCTA = () => {
       setTimeout(() => {
         setIsSubmitted(false);
         setEmail("");
+      }, 3000);
+    }
+  };
+
+  const handleSkinFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.name && formData.age && formData.condition) {
+      setFormSubmitted(true);
+      setTimeout(() => {
+        setFormSubmitted(false);
+        setFormData({ name: "", age: "", condition: "", concerns: "" });
       }, 3000);
     }
   };
@@ -63,7 +82,7 @@ const FinalCTA = () => {
           </div>
 
           {/* Email Form */}
-          <div className="bg-white/20 backdrop-blur-sm rounded-3xl p-8 max-w-2xl mx-auto mb-12">
+          <div className="bg-white/20 backdrop-blur-sm rounded-3xl p-8 max-w-3xl mx-auto mb-12">
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <h3 className="text-2xl font-bold mb-4">
@@ -106,17 +125,92 @@ const FinalCTA = () => {
             )}
           </div>
 
+          {/* New Skin Condition Form */}
+          <div className="bg-white/20 backdrop-blur-sm rounded-3xl p-8 max-w-3xl mx-auto mb-12">
+            {!formSubmitted ? (
+              <form onSubmit={handleSkinFormSubmit} className="space-y-6 text-left">
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <ClipboardList className="w-7 h-7 text-gold" />
+                  Skin Condition Form
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full px-4 py-3 rounded-xl text-gray-900 focus:outline-none focus:ring-4 focus:ring-gold/30"
+                    required
+                  />
+                  <input
+                    type="number"
+                    placeholder="Age"
+                    value={formData.age}
+                    onChange={(e) =>
+                      setFormData({ ...formData, age: e.target.value })
+                    }
+                    className="w-full px-4 py-3 rounded-xl text-gray-900 focus:outline-none focus:ring-4 focus:ring-gold/30"
+                    required
+                  />
+                </div>
+                <select
+                  value={formData.condition}
+                  onChange={(e) =>
+                    setFormData({ ...formData, condition: e.target.value })
+                  }
+                  className="w-full px-4 py-3 rounded-xl text-gray-900 focus:outline-none focus:ring-4 focus:ring-gold/30"
+                  required
+                >
+                  <option value="">Select Your Skin Condition</option>
+                  <option value="acne">Acne</option>
+                  <option value="dryness">Dryness</option>
+                  <option value="oiliness">Oiliness</option>
+                  <option value="sensitivity">Sensitivity</option>
+                  <option value="pigmentation">Pigmentation</option>
+                </select>
+                <textarea
+                  placeholder="Describe your main concerns..."
+                  value={formData.concerns}
+                  onChange={(e) =>
+                    setFormData({ ...formData, concerns: e.target.value })
+                  }
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-xl text-gray-900 focus:outline-none focus:ring-4 focus:ring-gold/30"
+                />
+                <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className="bg-gold hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-full font-bold text-lg transform hover:scale-105 transition-all duration-200 shadow-lg"
+                >
+                  Submit Form
+                </button>
+                </div>
+              </form>
+            ) : (
+              <div className="text-center animate-scale-in">
+                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Sparkles className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Form Submitted!</h3>
+                <p className="text-lg">
+                  Thank you for sharing your details. Our team will review your
+                  condition and reach out with tailored advice.
+                </p>
+              </div>
+            )}
+          </div>
+
           {/* Final CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pb-8">
-            {/* <button className="bg-white hover:bg-gray-100 text-gray-900 px-10 py-4 rounded-full font-bold text-xl transform hover:scale-105 transition-all duration-200 shadow-lg">
-              Shop Now - Transform Your Skin
-            </button> */}
             <div className="text-3xl opacity-90">
               <span className="font-bold">30-Day Money-Back Guarantee</span>
             </div>
           </div>
         </div>
       </div>
+
       {/* Bottom Nav */}
       <footer className="w-full bg-primary-700 text-white py-4 text-center text-sm opacity-90">
         <div>
