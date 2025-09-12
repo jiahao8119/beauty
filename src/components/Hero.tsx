@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Star, Sparkles } from "lucide-react";
 
-// Countdown target: 10 minutes from now
-const COUNTDOWN_TARGET = new Date(Date.now() + 1000 * 60 * 10);
+// Countdown target: 2 hours from now
+const COUNTDOWN_TARGET = new Date(Date.now() + 1000 * 60 * 60 * 2);
 
 const Hero = () => {
   // Countdown timer logic

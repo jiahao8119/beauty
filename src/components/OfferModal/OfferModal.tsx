@@ -35,7 +35,7 @@ const OfferModal: React.FC<OfferModalProps> = ({ open, onClose }) => {
         {/* Left: Image */}
         <div className="w-1/2 bg-gradient-to-br from-primary-100 to-gold/20 flex items-center justify-center p-6 hidden md:flex">
           <img
-            src="/src/public/logo/beauty.webp"
+            src="/logo/beauty.webp"
             alt="Special Offer"
             className="rounded-2xl shadow-lg max-h-72 object-cover"
           />
