@@ -30,7 +30,7 @@ const Hero = () => {
     <section className="relative bg-gradient-to-br from-primary-50 via-white to-beige-50 min-h-screen flex items-center">
       {/* Countdown Timer */}
       <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20">
-        <div className="bg-white/95 border-2 border-gold text-gold font-extrabold px-10 py-4 rounded-full shadow-2xl flex items-center gap-3 text-2xl animate-pulse-gold">
+        <div className="bg-white/50 border-2 border-gold text-gold font-extrabold px-6 py-2 rounded-full shadow-2xl flex items-center gap-3 text-2xl animate-pulse-gold">
           ⏰ Limited Offer Ends In:
           <span className="ml-3 font-mono">
             {minutes}:{seconds}
