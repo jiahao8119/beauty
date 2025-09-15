@@ -115,7 +115,7 @@ const LimitedOffer = () => {
               </div>
             </button>
             <div className="text-lg opacity-90">
-              Regular Price: <span className="line-through">$49</span> <span className="font-bold text-gold">$39.20</span>
+              Regular Price: <span className="line-through">RM 49</span> <span className="font-bold text-gold">RM 39.20</span>
             </div>
           </div>
         </div>

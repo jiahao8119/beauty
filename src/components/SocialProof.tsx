@@ -64,18 +64,20 @@ const SocialProof = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div 
+            <div
               key={index}
-              className="bg-gradient-to-br from-primary-50 to-beige-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-up"
+              className="bg-gradient-to-br from-primary-50 to-beige-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-up flex flex-col"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="flex items-center gap-1 mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-gold text-gold" />
-                ))}
+              <div>
+                <div className="flex items-center gap-1 mb-6">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-gold text-gold" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.content}"</p>
               </div>
-              <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.content}"</p>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-auto">
                 <img 
                   src={testimonial.image}
                   alt={testimonial.name}
